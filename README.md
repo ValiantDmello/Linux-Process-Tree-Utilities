@@ -37,3 +37,15 @@ This command prints the child processes of the process with PID 1234 in the proc
 ```bash
 ./ztree <root_pid> [-t <PROC_ELTIME> | -b <NO_OF_DFCS>]
 ```
+
+* <root_pid>: The root process ID.
+* Options: <br>
+-t <PROC_ELTIME>: Terminate parents with an elapsed time greater than <PROC_ELTIME> minutes.<br>
+-b <NO_OF_DFCS>: Terminate parents with a number of defunct child processes greater than or equal to <NO_OF_DFCS>.<br>
+
+### Examples
+
+```bash
+./ztree 1 -t 5.0
+```
+This command terminates parent processes in the process tree rooted at PID 1 with an elapsed time greater than 5.0 minutes.
